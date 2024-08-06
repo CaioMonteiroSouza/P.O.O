@@ -12,10 +12,10 @@ public class Carro {
     }
 
     public void acelerar(){
-        System.out.println("Carro acelerando ...");
+        System.out.println("Carro acelerando ..." + this.marca + " " + this.modelo);
     }
 
     public void frear(){
-        System.out.println("Carro freando ...");
+        System.out.println("Carro freando ..." + this.marca + " " + this.modelo);
     }
 }
