@@ -43,7 +43,7 @@ public class CarItem {
 
     @Override
     public String toString() {
-        return "CarItem{" +
+        return "\nCarItem{" +
                 "id=" + id +
                 ", quantity=" + quantity +
                 ", product=" + product +

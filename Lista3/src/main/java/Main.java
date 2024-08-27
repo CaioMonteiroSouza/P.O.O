@@ -1,24 +1,25 @@
 import br.edu.fatecfranca.ex0.CarItem;
 import br.edu.fatecfranca.ex0.Product;
+import br.edu.fatecfranca.ex0.ShoppingCart;
 
 public class Main {
     public static void main(String[] args) {
         Product obj1 = new Product("Monitor", 600, 1);
-        CarItem obj2 = new CarItem(1, 5, obj1);
+        Product obj2 = new Product("Teclado", 140, 2);
+        Product obj3 = new Product("Mouse", 90, 3);
 
-        Product obj3 = new Product("Teclado", 140, 2);
-        CarItem obj4 = new CarItem(2, 6, obj1);
+        ShoppingCart carrinho1 = new ShoppingCart(1, "Franca", "Cartao de credito");
+        carrinho1.addCarItem(1, 5, obj1);
+        carrinho1.addCarItem(3, 10, obj2);
+        carrinho1.valorTotal();
 
-        Product obj5 = new Product("Mouse", 90, 3);
-        CarItem obj6 = new CarItem(3, 10, obj3);
+        System.out.println(carrinho1.toString());
 
-        CarItem obj7 = new CarItem(4, 15, obj3);
-        CarItem obj8 = new CarItem(5, 20, obj5);
+        ShoppingCart carrinho2 = new ShoppingCart(2, "Batatais", "PIX");
+        carrinho2.addCarItem(2, 6, obj1);
+        carrinho2.addCarItem(5, 20, obj3);
+        carrinho2.valorTotal();
 
-        System.out.println(obj2.toString());
-        System.out.println(obj4.toString());
-        System.out.println(obj6.toString());
-        System.out.println(obj7.toString());
-        System.out.println(obj8.toString());
+        System.out.println(carrinho2.toString());
     }
 }
