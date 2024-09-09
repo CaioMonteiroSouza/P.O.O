@@ -62,7 +62,7 @@ public class Funcionario {
                 "nome='" + nome + '\'' +
                 ", endereco='" + endereco + '\'' +
                 ", cpf='" + cpf + '\'' +
-                ", salario=" + salario +
+                ", salario=" + calcularSalario() +
                 '}';
     }
 }
