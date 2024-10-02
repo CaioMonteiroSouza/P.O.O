@@ -1,0 +1,2 @@
+Interface: Define métodos sem implementação; uma classe pode implementar várias interfaces.
+Classe Abstrata: Pode ter métodos com ou sem implementação; permite herança única (uma classe só pode herdar uma classe abstrata).
