@@ -1,8 +1,8 @@
 package br.edu.fatecfranca.ecommerce.service;
 
-import br.edu.fatecfranca.ecommerce.model.Produto;
-import br.edu.fatecfranca.ecommerce.dto.ProdutoDTO;
-import br.edu.fatecfranca.ecommerce.repository.ProdutoRepository;
+import br.edu.fatecfranca.ecommerce.model.Cliente;
+import br.edu.fatecfranca.ecommerce.dto.ClienteDTO;
+import br.edu.fatecfranca.ecommerce.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,43 +13,43 @@ import java.util.Optional;
 public class ClienteService {
     // injeção de dependência - não precisa instanciar objeto para chamar seus métodos
     @Autowired
-    private ProdutoRepository produtoRepository;
+    private ClienteRepository clienteRepository;
 
-    public List<Produto> listarTodos(){
-        return produtoRepository.findAll();
+    public List<Cliente> listarTodos(){
+        return clienteRepository.findAll();
     }
 
-    public Optional<Produto> buscarPorId(Long id){
-        return produtoRepository.findById(id);
+    public Optional<Cliente> buscarPorId(Long id){
+        return clienteRepository.findById(id);
     }
 
-    public Produto salvar(ProdutoDTO produtoDTO){
-        Produto produto = new Produto();
-        produto.setNome(produtoDTO.getNome());
-        produto.setDescricao(produtoDTO.getDescricao());
-        produto.setPreco(produtoDTO.getPreco());
-        produto.setUrl_imagem(produtoDTO.getUrl_imagem());
-        return produtoRepository.save(produto);
+    public Cliente salvar(ClienteDTO ClienteDTO){
+        Cliente Cliente = new Cliente();
+        Cliente.setNome(ClienteDTO.getNome());
+        Cliente.setEmail(ClienteDTO.getEmail());
+        Cliente.setUsername(ClienteDTO.getUsername());
+        Cliente.setPassword(ClienteDTO.getPassword());
+        return clienteRepository.save(Cliente);
 
     }
 
-    public Produto remove(long id){
-        Optional<Produto> produto = produtoRepository.findById(id);
-        if(produto.isPresent()){
-            produtoRepository.delete(produto.get());
-            return produto.get();
+    public Cliente remove(long id){
+        Optional<Cliente> Cliente = clienteRepository.findById(id);
+        if(Cliente.isPresent()){
+            clienteRepository.delete(Cliente.get());
+            return Cliente.get();
         }
         return null;
     }
 
-    public Produto atualizar(Long id, ProdutoDTO produtoDTO){
-        Optional<Produto> produto = produtoRepository.findById(id);
-        if(produto.isPresent()){
-            produto.get().setNome(produtoDTO.getNome());
-            produto.get().setDescricao(produtoDTO.getDescricao());
-            produto.get().setPreco(produtoDTO.getPreco());
-            produto.get().setUrl_imagem(produtoDTO.getUrl_imagem());
-            return produtoRepository.save(produto.get());
+    public Cliente atualizar(Long id, ClienteDTO ClienteDTO){
+        Optional<Cliente> Cliente = clienteRepository.findById(id);
+        if(Cliente.isPresent()){
+            Cliente.get().setNome(ClienteDTO.getNome());
+            Cliente.get().setEmail(ClienteDTO.getEmail());
+            Cliente.get().setUsername(ClienteDTO.getUsername());
+            Cliente.get().setPassword(ClienteDTO.getPassword());
+            return clienteRepository.save(Cliente.get());
         }
         return null;
     }

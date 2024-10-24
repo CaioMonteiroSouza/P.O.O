@@ -1,8 +1,8 @@
 package br.edu.fatecfranca.ecommerce.repository;
 
-import br.edu.fatecfranca.ecommerce.model.Produto;
+import br.edu.fatecfranca.ecommerce.model.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ClienteRepository extends JpaRepository<Produto, Long> {
+public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
 }

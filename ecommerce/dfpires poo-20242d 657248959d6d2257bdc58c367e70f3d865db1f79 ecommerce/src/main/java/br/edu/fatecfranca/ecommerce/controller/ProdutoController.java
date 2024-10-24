@@ -2,6 +2,7 @@ package br.edu.fatecfranca.ecommerce.controller;
 import br.edu.fatecfranca.ecommerce.dto.ProdutoDTO;
 import br.edu.fatecfranca.ecommerce.model.Produto;
 import br.edu.fatecfranca.ecommerce.service.ClienteService;
+import br.edu.fatecfranca.ecommerce.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +15,7 @@ import java.util.Optional;
 @RequestMapping("/api/produtos")
 public class ProdutoController {
     @Autowired
-    private ClienteService produtoService;
+    private ProdutoService produtoService;
 
     @GetMapping
     public ResponseEntity<List<Produto>> listarTodos(){

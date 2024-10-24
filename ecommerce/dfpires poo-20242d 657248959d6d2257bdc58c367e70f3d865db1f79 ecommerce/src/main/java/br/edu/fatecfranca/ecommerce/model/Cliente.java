@@ -11,6 +11,7 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private Double preco;
-    private String url_imagem;
+    private String username;
+    private String email;
+    private String password;
 }
