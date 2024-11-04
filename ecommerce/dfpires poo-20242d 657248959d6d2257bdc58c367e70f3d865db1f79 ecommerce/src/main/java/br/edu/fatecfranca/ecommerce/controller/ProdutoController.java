@@ -1,7 +1,6 @@
 package br.edu.fatecfranca.ecommerce.controller;
 import br.edu.fatecfranca.ecommerce.dto.ProdutoDTO;
 import br.edu.fatecfranca.ecommerce.model.Produto;
-import br.edu.fatecfranca.ecommerce.service.ClienteService;
 import br.edu.fatecfranca.ecommerce.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
